@@ -52,11 +52,11 @@ class Articles {
     source =
         (json['source'] != null ? new Source.fromJson(json['source']) : null)!;
     json['author'] == null ? author = "" : author = json['author'];
-    title = json['title'];
-    description = json['description'];
-    url = json['url'];
-    urlToImage = json['urlToImage'];
-    publishedAt = json['publishedAt'];
+    json['title'] == null ? title = "" : title = json['title'];
+    json['description'] == null ? description = "" : description = json['description'];
+    json['url'] == null ? url = "" : url = json['url'];
+    json['urlToImage'] == null ? urlToImage = "" : urlToImage = json['urlToImage'];
+    json['publishedAt'] == null ? publishedAt = "" :  publishedAt = json['publishedAt'];
     json['content'] == null ? content = "" : content = json['content'];
   }
 
@@ -82,7 +82,7 @@ class Source {
 
   Source.fromJson(Map<String, dynamic> json) {
     json['id'] == null ? id = "" : id = json['id'];
-    name = json['name'];
+    json['name'] == null ? name = "" : name = json['name'];
   }
 
   Map<String, dynamic> toJson() {
